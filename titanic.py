@@ -4,8 +4,8 @@ import seaborn as sns
 from sklearn.ensemble import RandomForestClassifier
 
 
-train_data = pd.read_csv("train.csv")  #read csv file into a dataframe
-test_data = pd.read_csv("test.csv")   #read csv file into a dataframe
+train_data = pd.read_csv("dataset/train.csv")  #read csv file into a dataframe
+test_data = pd.read_csv("dataset/test.csv")   #read csv file into a dataframe
 
 
 women = train_data.loc[train_data.Sex == 'female']["Survived"]  #filter out females that survived
@@ -36,7 +36,7 @@ model.fit(X, y)
 predictions = model.predict(X_test)
 
 output = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': predictions})
-output.to_csv('my_submission.csv', index = False)
+output.to_csv('submission/my_submission.csv', index = False)
 print("Your submission was successfully saved!")
 
 
