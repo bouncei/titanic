@@ -27,7 +27,7 @@ print(full_dataframe.isna().sum())
 # print out value count of the Embarked column in the full_dataframe for debugging purposes
 print(full_dataframe["Embarked"].value_counts())
 
-# dimension of my plot
+# dimension of my histogram plot
 plt.figure(figsize=(10, 5))
 # initializing the histogram to use the age data from the full_dataframe
 plt.hist(full_dataframe["Age"], bins=20)
